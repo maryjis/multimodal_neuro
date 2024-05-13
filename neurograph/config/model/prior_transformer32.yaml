@@ -1,0 +1,3 @@
+defaults:
+    - transformer32
+    - base_prior_transformer

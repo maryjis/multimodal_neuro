@@ -1,0 +1,28 @@
+device: "cuda:0"
+num_threads: 1
+epochs: 20
+batch_size: 32
+valid_batch_size: 32
+optim: Adam
+optim_args: { "lr": 2e-4, "weight_decay": 0 }
+scheduler: "OneCycleLR"
+scheduler_metric: loss
+scheduler_args:
+  {
+    "div_factor": 2.0,
+    "final_div_factor": 10.0,
+    "pct_start": 0.3,
+    "max_lr": 4.0e-4,
+    "total_steps": 500,
+    "verbose": True,
+  }
+
+select_best_model: False
+select_best_metric: "f1_macro"
+loss: "BolTLoss"
+loss_args: { "lambda_cons": 1.0 }
+
+prob_thr: 0.5
+
+use_nested: True
+num_outer_folds: 10

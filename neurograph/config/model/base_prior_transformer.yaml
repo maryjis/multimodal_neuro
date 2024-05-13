@@ -1,0 +1,3 @@
+name: 'PriorTransformer'
+alpha: 1.0
+trainable_alpha: True

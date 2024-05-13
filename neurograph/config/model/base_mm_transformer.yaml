@@ -1,0 +1,3 @@
+name: 'MultiModalTransformer'
+attn_type: 'concat'
+make_projection: True
